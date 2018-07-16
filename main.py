@@ -51,11 +51,7 @@ with open('content.html', 'r', encoding='utf-8') as f:
     jsCode = ''
     for line in lines:
         htmlstr += line.strip()
-        # 由于<progress标签的问题，会出现奇怪的事情，所以，progress标签不进行打字输出：
-        if line.strip().startswith('<progress'):
-            pass
-        else:
-            htmlList.append(htmlstr)
+        htmlList.append(htmlstr)
     # 生成静态的简历页面：
     with open('indexHeader.html', 'r', encoding='utf-8') as f:
         indexHeader = f.read()
