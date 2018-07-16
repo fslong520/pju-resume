@@ -69,7 +69,7 @@ if __name__ == '__main__':
         jsHeader = f.read()
     with open('js/main.js', 'w', encoding='utf-8') as f:
         f.write(jsHeader+jsCode)
-    a = input('是否同时生成pdf文件？\n目前还是有些bug，如果你的简历分两栏，会变成一栏，感觉是一些css样式的问题，尚未解决。y/n?\n')
+    a = input('是否同时生成pdf文件？\n目前还是有些bug，如果你的简历分两栏，会变成一栏，应该是一些js代码控制的css样式的问题，尚未解决。y/n?\n')
     if a == 'y':
         # 转换静态html文件到pdf：
         # 安装位置，需要修改为你的设备wkhtmltopdf软件安装位置
