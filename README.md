@@ -1,11 +1,9 @@
 # pju-resume
 An online resume frame by Pyrhon+jQuery+UIkit.  
-这是本人写的一个简历框架（开的新坑），主要是一个动态的类似打字机效果的简历（后续可能会放更多的特效），使用说明详见[wiki页](https://github.com/fslong520/pju-resume/wiki/使用说明)。  
-
+这是本人写的一个简历框架（开的新坑），主要是一个动态的类似打字机效果的简历（后续可能会放更多的特效），使用说明详见[wiki页](https://github.com/fslong520/pju-resume/wiki/使用说明)。    
 ---  
 ## 运行效果 
-![简历效果图初步.gif](https://i.loli.net/2018/07/16/5b4bf047f2e55.gif)<!--删除连接：https://sm.ms/delete/DokAaLfv28dP5VJ-->   
-
+![简历效果图初步.gif](https://i.loli.net/2018/07/16/5b4bf047f2e55.gif)<!--删除连接：https://sm.ms/delete/DokAaLfv28dP5VJ-->     
 ---  
 ## bug与后续计划
 ### bug与不友好的地方
@@ -14,13 +12,11 @@ An online resume frame by Pyrhon+jQuery+UIkit.
 ### 计划
 1. 进一步封装各个方法、类；
 2. 可以使用markdown编辑简历或者文章，然后再生成（感觉这种模式更加适合使用markdown写的文章）；
-3. 未完待续...
-
+3. 未完待续...    
 ---
 *参考文献：*  
 > [1、wkhtmltopdf 中文参数详解](https://blog.csdn.net/u014644418/article/details/51584553)  
-> [2、python--生成pdf](https://www.jianshu.com/p/91fa0420f621)
-
+> [2、python--生成pdf](https://www.jianshu.com/p/91fa0420f621)   
 ---
 ## 开发日志
 ### 2018.07.19 
