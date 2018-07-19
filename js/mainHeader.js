@@ -22,6 +22,16 @@ function showElementsByWord(selector, char) {
     }
 }
 
+function showElementsByLine(selector, str, i) {
+    if (selector == $("#contentbh3")) {
+        i += 1; setTimeout(() => { selector.text(str); }, i * 100);
+    }
+    else {
+        i += 1; setTimeout(() => { selector.html(str); }, i * 100);
+    }
+
+}
+
 function showElementsByElement(selector, char, i) {
     setTimeout(function () {
         selector.html(char);
