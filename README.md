@@ -1,20 +1,10 @@
 # pju-resume
 An online resume frame by Pyrhon+jQuery+UIkit.  
-这是本人写的一个简历框架（开的新坑），主要是一个动态的类似打字机效果的简历（后续可能会放更多的特效）。  
+这是本人写的一个简历框架（开的新坑），主要是一个动态的类似打字机效果的简历（后续可能会放更多的特效），使用说明详见[wiki页](https://github.com/fslong520/pju-resume/wiki/使用说明)。  
 
 ---  
 ## 运行效果 
-![简历效果图初步.gif](https://i.loli.net/2018/07/16/5b4bf047f2e55.gif)<!--删除连接：https://sm.ms/delete/DokAaLfv28dP5VJ-->    
-
----  
-## 使用说明
-1. 克隆仓库到本地；
-2. 修改index.html、indexHeader.html里的title标签为自己的简历；
-3. 在content.html里面编写你自己的简历，静态的就行(**注意：因为解析网页数据的时候是逐行解析的，所以只需要把想在同一时间显示的代码放在同一行即可。**)；
-4. 编写完简历之后执行main.py将自动生成indexStatic.html文件，这个便是静态简历最终版（如果报错可能是相关模块没安装，差什么pip一下就行；
-5. 实际执行的时候，先添加引用，然后可以使用`Resume.createPDFfile()`方法导出pdf版简历（**目前还有bug，建议用浏览器打开静态简历再打印成pdf吧**）如果提示导出pdf失败，那就是没有安装pdfkit或者wkhtmltox软件，检查下哪个没安装，如果是pdfkit没安装，用pip安装一下即可；如果是wkhtmltox没安装请访问其官网（ [wkhtmltox官网](https://wkhtmltopdf.org/downloads.html)）安装，如果是在Linux环境下运行或wkhtmltopdf没安装在默认目录，需要进入main.py修改`path_wk = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'`为你的设备中wkhtmltopdf的安装位置。）；
-6. 在浏览器打开index.html就能看到效果，如果你的简历不是两栏的，需要修改mainHeader.js文件（内容很简单，稍后我会完善里面的注释）；
-7. 如果需要单独修改某条的特效，要么在content.html里面写好，要么在maind.js里单独修改；   
+![简历效果图初步.gif](https://i.loli.net/2018/07/16/5b4bf047f2e55.gif)<!--删除连接：https://sm.ms/delete/DokAaLfv28dP5VJ-->   
 
 ---  
 ## bug与后续计划
