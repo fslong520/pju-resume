@@ -38,7 +38,7 @@ function showElementsByElement(selector, char, i) {
     }, i * 1000);
 }
 $(function () {
-    showElementsByWord($("#contentbh3"), "今天我们来写一封简历！");
+    showElementsByWord($("#contentbh3"), "今天我们来写一封简历！");//这里调用一个逐字显示的函数在页面最上面显示信息，用于展示一开始的提示；
     showElementsByWord($("#contentlh3"), "这里将会展示个人基本信息。");
     showElementsByWord($("#contentrh3"), "这里将会展示个人简历详情。");
 
