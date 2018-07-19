@@ -1,9 +1,11 @@
 # pju-resume
 An online resume frame by Pyrhon+jQuery+UIkit.  
 这是本人写的一个简历框架（开的新坑），主要是一个动态的类似打字机效果的简历（后续可能会放更多的特效），使用说明详见[wiki页](https://github.com/fslong520/pju-resume/wiki/使用说明)。    
+
 ---  
 ## 运行效果 
 ![简历效果图初步.gif](https://i.loli.net/2018/07/16/5b4bf047f2e55.gif)<!--删除连接：https://sm.ms/delete/DokAaLfv28dP5VJ-->     
+
 ---  
 ## bug与后续计划
 ### bug与不友好的地方
