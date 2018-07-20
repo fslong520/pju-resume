@@ -63,11 +63,13 @@ class Resume(object):
             jsCode = ''
             for line in lines:
                 htmlstr += line.strip()
-                if line.startswith('<!--'):
+                if line.startswith('<img')or line.startswith('<input') or line.startswith('<hr') or line.startswith('<!--'):
                     htmlList.append(htmlstr)
+                elif line.startswith('<div') or line.startswith('<br') or line.startswith('</'):
+                    pass
                 else:
                     try:
-                        line.split('>')[1]
+                        line.strip().split('>')[1]
                         htmlList.append(htmlstr)
                     except:
                         pass
@@ -98,11 +100,11 @@ class Resume(object):
         config = pdfkit.configuration(wkhtmltopdf=pathWk)
         options = {
             'page-size': 'A4',  # Letter
-            'minimum-font-size': 25,
+            'minimum-font-size': 20,
             # 'image-dpi':1500, ###
             # 横向，注释掉就是纵向，详情请看：https://blog.csdn.net/u014644418/article/details/51584553
             'orientation': 'landscape',
-
+            'zoom': 0.75,
             'margin-top': '0.1in',  # 0.75in
             'margin-right': '0.1in',
             'margin-bottom': '0.1in',
@@ -115,7 +117,7 @@ class Resume(object):
                 ('cookie-name1', 'cookie-value1'),
                 ('cookie-name2', 'cookie-value2'),
             ],
-            'outline-depth': 10,
+            # 'outline-depth': 10, # 目录深度
         }
         try:
             pdfkit.from_file(os.path.join(pathFile, 'indexStatic.html'), 'indexStatic.pdf',
@@ -130,3 +132,4 @@ class Resume(object):
 if __name__ == '__main__':
     myResume = Resume()
     myResume.writeJScode()
+    myResume.createPDFfile()
