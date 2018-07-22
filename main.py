@@ -102,7 +102,7 @@ class Resume(object):
                 indexHeader = f.read()
             with open(r'staticFiles\indexFooter.html', 'r', encoding='utf-8') as f:
                 indexFooter = f.read()
-            with open(r'staticFiles\indexStatic.html', 'w', encoding='utf-8') as f:
+            with open(r'indexStatic.html', 'w', encoding='utf-8') as f:
                 f.write(indexHeader+htmlstr+indexFooter)
             for htmlstr in htmlList:
                 jsCode += self.createJScode(htmlstr)

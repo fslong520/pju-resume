@@ -138,8 +138,8 @@
                 <li>
                     <!--做了几个项目，欢迎去Github帮我star-->
                     <strong>个人网站：</strong>
-                    <a href="https://fslong.xyz">首页</a> / 
-                    <a href="http://47.106.197.182/blog">博客</a> / 
+                    <a href="https://fslong.xyz">首页</a> /
+                    <a href="http://47.106.197.182/blog">博客</a> /
                     <a href="http://47.106.197.182/webapps">网页应用</a>
                 </li>
                 <li>
@@ -180,14 +180,16 @@
                 <li>
                     <ul>
                         <li>
+                            <!--写了几个网页应用，这个也是以后的发展方向-->
                             <b>（一）、Python及网页应用相关</b>
-                            <p>&emsp;&emsp;2017年下半年起，出于对微软的失望以及个人未来规划，决定转而学习Python。按照某大神帮忙列的提纲从前端相关知识学起，期间除去学习时编写的代码，主要就是
+                            <p>&emsp;&emsp;2017年下半年起，出于对微软的失望以及个人未来规划，决定转而学习Python，这也是以后的发展方向。按照某大神帮忙列的提纲从前端相关知识学起，期间除去学习时编写的代码，主要就是
                                 <b>搭建了个人网站，编写了一些爬虫、API接口</b>，以下将对其做简单介绍。</p>
                         </li>
                         <li>
                             <ul>
                                 <li>
                                     <p>
+                                        <!--作为一个程序猿（准的）怎么可以没有自己的技术博客-->
                                         <b>1、基于Hexo的个人博客</b>
                                     </p>
                                     <img src="img/hexo博客.png" alt="hexo个人博客">
@@ -195,21 +197,78 @@
                                 </li>
                                 <li>
                                     <p>
+                                        <!--学了Python最起码用Django搭一个博客呀-->
                                         <b>2、基于Django的个人博客</b>
                                     </p>
-                                    <img src="img/Django博客首页.png" alt="hexo个人博客">
-                                    <img src="img/管理面板.png" alt="hexo个人博客">
+                                    <img src="img/Django博客首页.png" alt="Django个人博客" style="width: 375px">
+                                    <img src="img/管理面板.png" alt="Django个人博客" style="width: 375px">
                                     <p>&emsp;&emsp;由于Hexo博客框架属于轻量级的静态博客框架，方便快速生成博客，但可玩性较差，无法实现同用户的一些动态交互。在学习完Django有关知识之后，参考Hexo博客主界面搭建了基于Django的个人博客。该博客前端部分使用了一个轻量级CSS框架Uikit2.0，后端是Django2.0.5，数据库目前采用的是sqlite3，后续将迁移到MariaDB（MySQL的一个分支）。目前实现的主要功能有：
                                         <br>&emsp;&emsp;1、文章的增删改查；
                                         <br>&emsp;&emsp;2、文章评论的增删改查；
                                         <br>&emsp;&emsp;3、用户的注册、登陆、注销、修改密码（注册时在客户端通过使用CryptoJS计算哈希值对用户密码进行加密，数据库不存储明文密码，保证了用户密码的安全性）；
-                                        <br>&emsp;&emsp;4、支持Markdown语，后续计划加入导入导出功能；
+                                        <br>&emsp;&emsp;4、支持Markdown语言，后续计划加入导入导出功能；
                                         <br>&emsp;&emsp;5、自适应手机端与PC端。
                                     </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <!--其他一些小的网页应用-->
+                                        <b>3、网页应用及接口</b>
+                                    </p>
+                                    <img src="img/Bing美图.png" style="width: 375px" alt="">
+                                    <img src="img/天气.png" style="width: 375px" alt="">
+                                    <img src="img/书籍.png" style="width: 375px" alt="">
+                                    <img src="img/解析视频.png" alt="解析视频" style="width: 375px">
+                                    <p>&emsp;&emsp;某些视频网站吃相太难看，于是通过抓包、分析一些在线接口，找到了一些视频网站的真实解析接口，在自己的网站上增加了一个视频解析的功能并做成了接口，前端使用了Ajax、jQuery相关技术，后端使用了Requests、PyjQuery等技术。后续也做了一些其他小应用，比如天气预报是通过分析客户端ip地址，获取位置信息，然后再获取天气数据，呈现在首页上。</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <!--爬虫也不能少呀！-->
+                                        <b>4、爬虫类</b>
+                                    </p>
+                                    <!--从requests开始-->
+                                    <p>
+                                        <b>(1)、基于requests和PyjQuery的爬虫</b>
+                                    </p>
+                                    <p>
+                                        <p>雪球首页推荐用户简要信息</p>
+                                        <img src="img/spider/xueqiu1.png" alt="" style="width: 500px">
+                                        <p>苦瓜书城爬虫</p>
+                                        <img src="img/spider/kgbook1.png" alt="">
+                                    </p>
+                                    <!--pyqt也试了下，刚刚入门-->
+                                    <p>
+                                        <b>(2)、基于PyQt和PyjQuery的爬虫</b>
+                                    </p>
+                                    <p>
+                                        <p>&emsp;&emsp;requests爬虫有个问题就是只能获取静态的页面，由js控制加载出来的元素和内容是无法获取到的。这种情况通常可以使用selenium或者PyQt来获取数据。PyQt自带一个QWebEngineView引擎，可以使用其启动一个无界面的浏览器从而在加载完成之后获取数据。</p>
+                                        <img src="img/spider/xueqiu2.png" alt="">
+                                    </p>
+                                    <!--爬虫神器-->
+                                    <p>
+                                        <b>(3)、scrapy框架爬虫</b>
+                                    </p>
+                                    <p>
+                                        <p>苦瓜书城爬虫2</p>
+                                        <img src="img/spider/kgbook2.png" alt="" style="width: 375px">
+                                        <img src="img/spider/kgbook3.png" alt="" style="width: 375px">
+                                        <p>笔趣阁爬虫</p>
+                                        <img src="img/spider/biquge.png" alt="">
+                                    </p>
+
+                                </li>
+                                <li>
+                                    <p>
+                                        <!--最后就是这个简历框架了-->
+                                        <b>5、pju-resume简历框架</b>
+                                    </p>
+                                    <img src="img/简历效果图初步.gif" alt="">
+                                    <p>&emsp;&emsp;最近的项目就是这个简历，参考之前比较火的一个简历特效，做了这个逐条呈现内容的简历框架，主要使用Python解析静态的html简历内容，然后生成相应的js代码，最后拼接生成简历，并导出pdf（导出功能还需修复，导出的pdf目前格式有问题。）</p>
                                 </li>
                             </ul>
                         </li>
                         <li>
+                            <!--早年间写的一些小玩意-->
                             <b>（二）、C#相关</b>
                             <p>&emsp;&emsp;对微软产品比较感兴趣，故在2016年年底至2017年上半年期间学习了一段时间C#相关东西。个人感觉C#还是十分优雅的，但由于后续应用生态发展不明朗，在2017年下半年转投Python开发的学习了。</p>
                         </li>
@@ -236,7 +295,7 @@
                                     <p>
                                         <b>3、彩票号码生成器</b>
                                     </p>
-                                    <img src="img/双色球大乐透随机.jpg" alt="彩票号码生成器" style="display:inline">
+                                    <img src="img/双色球大乐透随机.jpg" alt="彩票号码生成器" style="height: 270px;">
                                     <p>&emsp;&emsp;自从支付宝上不能购买彩票，发现在彩票点机选中奖概率直线下降，怀疑是机选程序的毛病，于是写了这个UWP应用部署在手机上，用于买彩票时随机生成彩票号码。主界面还是使用XAML编写，后端依然是C#，这个程序通过算法优化，嵌套了多层随机数函数，尽可能模拟现实中随机数的产生（然而还是没能中大奖）。</p>
                                 </li>
                             </ul>
@@ -259,10 +318,10 @@
                 <li>
                     <ul class="uk-list">
                         <li>
-                            1、节能减排大赛三等奖；
+                            1、第四届“能动杯”节能减排大赛三等奖；
                         </li>
                         <li>
-                            2、毕业设计大赛院三等奖；
+                            2、第七届“广数杯”毕业设计大赛三等奖；
                         </li>
                         <li>
                             3、天津大学优秀毕业生；
@@ -281,7 +340,7 @@
                             1、共青团2016年下半年青年岗位能手；
                         </li>
                         <li>
-                            2、劳动竞赛优秀青年；
+                            2、2017年劳动竞赛先进个人；
                         </li>
                         <li>
                             3、其他若干奖项。
