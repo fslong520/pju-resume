@@ -21,6 +21,8 @@ An online resume frame by Pyrhon+jQuery+UIkit.
 > [2、python--生成pdf](https://www.jianshu.com/p/91fa0420f621)   
 ---
 ## 开发日志
+### 2018.07.21
+1. 优化代码，减少js代码量；
 ### 2018.07.20
 1. 继续完善简历中，后续计划将一些配置文件，数据内容存入数据库或者配置文件中，再仔细想想。
 ### 2018.07.19 

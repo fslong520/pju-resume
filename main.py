@@ -29,21 +29,39 @@ class Resume(object):
         for i in elementsListLeft:
             if i.startswith('<!--'):
                 message = i.split('--')[1]
-        elementsListLeft = elementsListLeft[::-1]
+        #elementsListLeft = elementsListLeft[::-1]
+        for j in elementsListLeft:
+            if j.startswith('<img') or j.startswith('<input') or j.startswith('<br') or j.startswith('<hr') or j.startswith('<!--'):
+                elementsListLeft.remove(j)
+        leftTimes = {}
+        left = []
+        for i in elementsListLeft:
+            if re.match(r'(.*?)(\s)', i):
+                left.append('</' + i.split(' ')[0][1:]+'>')
+            else:
+                left.append('</' + i[1:])
+        for i in left:
+            if '!--' in i:
+                left.remove(i)
+            if 'img' in i:
+                left.remove(i)
+        for i in left:
+            if not '</br>' in i:
+                leftTimes[i] = left.count(i)
+        rightTimes = {}
+        for i in elementsListRight:
+            rightTimes[i] = elementsListRight.count(i)
         if len(elementsListLeft) > len(elementsListRight):
-            i = len(elementsListRight)
-            while i < len(elementsListLeft):
-                j = elementsListLeft[i]
-                if j.startswith('<img')or j.startswith('<input') or j.startswith('<br') or j.startswith('<hr') or j.startswith('<!--'):
-                    pass
-                else:
-                    if re.match(r'(.*?)(\s)', elementsListLeft[i]):
-                        htmlstr += '</' + \
-                            elementsListLeft[i].split(' ')[0][1:]+'>'
-                    else:
-                        htmlstr += '</' + \
-                            elementsListLeft[i].split(' ')[0][1:]
-                i += 1
+            string = []
+            for i in leftTimes:
+                try:
+                    if rightTimes[i] < leftTimes[i]:
+                        string.append(i)
+                except:
+                    string.append(i)
+            string = string[::-1]
+            for i in string:
+                htmlstr += i
         messageCode = 'i+=1;showElementsByLine($("#contentbh3"),"%s",i) \n' % message
         htmlstr = htmlstr.replace('\"', '\'')
         htmlstr = 'i+=1;showElementsByLine($("#contentDiv"),"%s",i) \n' % htmlstr
@@ -56,30 +74,35 @@ class Resume(object):
             return self.messageCode+self.htmlstrCode
 
     def writeJScode(self):
-        with open('content.html', 'r', encoding='utf-8') as f:
+        with open(r'staticFiles\content.html', 'r', encoding='utf-8') as f:
             lines = f.readlines()
             htmlList = []
             htmlstr = ''
             jsCode = ''
             for line in lines:
-                htmlstr += line.strip()
-                if line.startswith('<img')or line.startswith('<input') or line.startswith('<hr') or line.startswith('<!--'):
+                line = line.strip()
+                htmlstr += line
+                if line.startswith('<img')or line.startswith('<input') or line.startswith('<!--') or line.startswith('</li'):
                     htmlList.append(htmlstr)
-                elif line.startswith('<div') or line.startswith('<br') or line.startswith('</'):
+                elif line.startswith('<div') or line.startswith('<br') or line.startswith('<hr') or line.startswith('<li'):
                     pass
                 else:
-                    try:
-                        line.strip().split('>')[1]
-                        htmlList.append(htmlstr)
-                    except:
-                        pass
+                    if '</' in line:
+                        if not line.startswith('</'):
+                            htmlList.append(htmlstr)
+                    else:
+                        try:
+                            line.split('>')[1]
+                            htmlList.append(htmlstr)
+                        except:
+                            pass
 
             # 生成静态的简历页面：
-            with open('indexHeader.html', 'r', encoding='utf-8') as f:
+            with open(r'staticFiles\indexHeader.html', 'r', encoding='utf-8') as f:
                 indexHeader = f.read()
-            with open('indexFooter.html', 'r', encoding='utf-8') as f:
+            with open(r'staticFiles\indexFooter.html', 'r', encoding='utf-8') as f:
                 indexFooter = f.read()
-            with open('indexStatic.html', 'w', encoding='utf-8') as f:
+            with open(r'staticFiles\indexStatic.html', 'w', encoding='utf-8') as f:
                 f.write(indexHeader+htmlstr+indexFooter)
             for htmlstr in htmlList:
                 jsCode += self.createJScode(htmlstr)
@@ -132,4 +155,4 @@ class Resume(object):
 if __name__ == '__main__':
     myResume = Resume()
     myResume.writeJScode()
-    myResume.createPDFfile()
+    # myResume.createPDFfile()

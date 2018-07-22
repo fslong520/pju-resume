@@ -41,13 +41,9 @@ $(function () {
     showElementsByWord($("#contentbh3"), "今天我们来写一封简历！");
     showElementsByWord($("#contentlh3"), "这里将会展示个人基本信息。");
     showElementsByWord($("#contentrh3"), "这里将会展示个人简历详情。");
-
-});
-$(function () {
     setTimeout(() => {
         showElementsByWord($("#contentbh3"), "这里将会显示程序执行日志，就像控制台一样。");
     }, 1200);
     setTimeout(() => {
         showElementsByWord($("#contentbh3"), "那么我们开始吧!");
-    }, 3500);
-});
+    }, 3500);})
