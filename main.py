@@ -15,6 +15,8 @@ class Resume(object):
     def __init__(self):
         self.messageCode = ''
         self.htmlstrCode = ''
+        self.base_path = os.path.join(os.path.dirname(
+            os.path.abspath(__file__)), 'staticFiles')
 
     def createJScode(self, htmlstr):
         elementsList = re.findall(r'<.*?>', htmlstr)
@@ -74,7 +76,8 @@ class Resume(object):
             return self.messageCode+self.htmlstrCode
 
     def writeJScode(self):
-        with open(r'staticFiles\content.html', 'r', encoding='utf-8') as f:
+        path = os.path.join(self.base_path, 'content.html')
+        with open(path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
             htmlList = []
             htmlstr = ''

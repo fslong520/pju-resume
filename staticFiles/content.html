@@ -26,6 +26,9 @@
                 <strong>微博：</strong>
                 <a href="https://weibo.com/fslong/">公子照明燈</a>
             </li>
+            <li>
+                <strong>微信公众号：</strong>明夜津
+            </li>
         </ul>
         <!--要应聘的岗位肯定要说的-->
         <h5 class="uk-h5 uk-text-left" style="color:cadetblue;margin-left: -10px;">
@@ -138,9 +141,11 @@
                 <li>
                     <!--做了几个项目，欢迎去Github帮我star-->
                     <strong>个人网站：</strong>
-                    <a href="https://fslong.xyz">首页</a> /
-                    <a href="http://47.106.197.182/blog">博客</a> /
-                    <a href="http://47.106.197.182/webapps">网页应用</a>
+                    <a href="https://fslong.xyz">首页</a> / 
+                    <a href="http://47.106.197.182/blog"> 博客</a> / 
+                    <a href="http://47.106.197.182/webapps"> 网页应用</a> / 
+                    <a href="https://www.fslong.xyz/pju-resume"> 在线简历</a>
+
                 </li>
                 <li>
                     <strong>Github：</strong>
@@ -174,7 +179,7 @@
                 </li>
                 <!--努利学习天天向上，简单介绍下这几年写的代码-->
                 <li>
-                    <h4 class="uk-h4" style="color:darkslategray">二、学习及项目经历</h4>                   
+                    <h4 class="uk-h4" style="color:darkslategray">二、学习及项目经历</h4>
                 </li>
                 <li>
                     <ul>
@@ -215,7 +220,7 @@
                                     </p>
                                     <img src="img/Bing美图.png" style="width: 375px" alt="">
                                     <img src="img/书籍.png" style="width: 375px" alt="">
-                                    <img src="img/天气.png" style="width: 375px" alt="">                                    
+                                    <img src="img/天气.png" style="width: 375px" alt="">
                                     <img src="img/解析视频.png" alt="解析视频" style="width: 375px">
                                     <p>&emsp;&emsp;某些视频网站广告太长，插播太多，于是通过抓包、分析一些在线接口，找到了一些视频网站的真实解析接口，在自己的网站上增加了一个视频解析的功能并做成了接口，前端使用了Ajax、jQuery相关技术，后端使用了Requests、PyjQuery等技术。后续也做了一些其他小应用，比如天气预报是通过分析客户端ip地址，获取位置信息，然后再获取天气数据，呈现在首页上。</p>
                                 </li>
@@ -257,18 +262,36 @@
                                 </li>
                                 <li>
                                     <p>
-                                        <!--最后就是这个简历框架了-->
+                                        <!--这个简历框架也地说呀-->
                                         <b>5、pju-resume简历框架</b>
                                     </p>
                                     <img src="img/简历效果图初步.gif" alt="">
-                                    <p>&emsp;&emsp;最近的项目就是这个简历，参考之前比较火的一个简历特效，做了这个逐条呈现内容的简历框架，主要使用Python解析静态的html简历内容，然后生成相应的js代码，最后拼接生成简历。</p>
+                                    <p>&emsp;&emsp;参考之前比较火的一个简历特效，做了这个逐条呈现内容的简历框架，主要使用Python解析静态的html简历内容，然后生成相应的js代码，最后拼接生成简历。</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <!--刚刚写了个自动维护代理池-->
+                                        <b>6、自用代理池</b>
+                                    </p>
+                                    <img src="img/代理池/代理池1.png" alt="代理池" style="width: 375px">
+                                    <img src="img/代理池/代理池2.png" alt="代理池" style="width: 375px">
+                                    <img src="img/代理池/代理池3.png" alt="代理池" style="width: 375px">
+                                    <img src="img/代理池/代理池4.png" alt="代理池" style="width: 375px">
+                                    <img src="img/代理池/代理池5.png" alt="代理池" style="width: 375px">
+                                    <img src="img/代理池/代理池6.png" alt="代理池" style="width: 375px">
+                                    <p>&emsp;&emsp;爬数据期间经常会遇到反爬虫封了ip，此时我们需要使用代理来应对反爬虫，于是写了一个自动维护的代理池，主要有以下功能：<br>
+                                        （1）、可以自动在网络上爬取一些免费代理，测试其可用性，并将可用的存入数据库。
+                                        <br>
+                                        （2）、隔一段时间重新扫描代理池中代理是否可用，如不可用将会自动删掉。
+                                        <br>
+                                        （3）、当代理池数量不足时，也会自重新爬取免费代理。</p>
                                 </li>
                             </ul>
                         </li>
                         <li>
                             <!--早年间写的一些小玩意-->
                             <b>（二）、C#相关</b>
-                            <p>&emsp;&emsp;在学习Python期间，我页比较喜欢微软的东西，也接触过C#一段时间，以下是C#相关的一下项目情况：</p>
+                            <p>&emsp;&emsp;同时比较喜欢微软的东西，早期也接触过C#一段时间，以下是C#相关的一下项目情况：</p>
                         </li>
                         <li>
                             <ul>
@@ -277,7 +300,8 @@
                                         <b>1、UWP学习合集</b>
                                     </p>
                                     <img src="img/UWPLearn.jpg" alt="UWP学习合集">
-                                    <p>&emsp;&emsp;UWP即Windows通用应用平台，在Win10 Mobile/Surface(Windows平板电脑）/PC/Xbox/HoloLens等平台上运行，GUI界面使用的是XAML这种标记语言编写（与HTML有些类似，也可以自适应不同尺寸设备），后端代码由C#编写，本程序只是一个UWP开发学习视频中每节课的代码合集，便于以后开发查找参考。</p>
+                                    <p>&emsp;&emsp;UWP即Windows通用应用平台，在Win10
+                                        Mobile/Surface(Windows平板电脑）/PC/Xbox/HoloLens等平台上运行，GUI界面使用的是XAML这种标记语言编写（与HTML有些类似，也可以自适应不同尺寸设备），后端代码由C#编写，本程序只是一个UWP开发学习视频中每节课的代码合集，便于以后开发查找参考。</p>
                                 </li>
 
                                 <li>
